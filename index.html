@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game Pro</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>♔ Chess Game Pro ♚</h1>
+            <div class="game-info">
+                <div class="turn-indicator">
+                    <span id="current-turn">White's Turn</span>
+                </div>
+                <div class="game-status">
+                    <span id="game-status">Game in Progress</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-container">
+            <!-- Left Panel: Captured Pieces & Controls -->
+            <aside class="left-panel">
+                <div class="captured-pieces">
+                    <h3>Captured Pieces</h3>
+                    <div class="captured-white">
+                        <h4>White Captured:</h4>
+                        <div id="captured-white"></div>
+                    </div>
+                    <div class="captured-black">
+                        <h4>Black Captured:</h4>
+                        <div id="captured-black"></div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="new-game-btn" class="btn btn-primary">New Game</button>
+                    <button id="undo-btn" class="btn btn-secondary">Undo</button>
+                    <button id="redo-btn" class="btn btn-secondary">Redo</button>
+                    <button id="flip-board-btn" class="btn btn-secondary">Flip Board</button>
+                </div>
+
+                <div class="ai-controls">
+                    <h3>AI Settings</h3>
+                    <label>
+                        <input type="checkbox" id="ai-enabled"> Enable AI
+                    </label>
+                    <label>
+                        Difficulty:
+                        <select id="ai-difficulty">
+                            <option value="1">Easy</option>
+                            <option value="2" selected>Medium</option>
+                            <option value="3">Hard</option>
+                            <option value="4">Expert</option>
+                        </select>
+                    </label>
+                </div>
+            </aside>
+
+            <!-- Chess Board -->
+            <div class="board-wrapper">
+                <div id="chess-board" class="chess-board"></div>
+            </div>
+
+            <!-- Right Panel: Move History -->
+            <aside class="right-panel">
+                <div class="move-history">
+                    <h3>Move History</h3>
+                    <div id="move-list" class="move-list"></div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Created with ♥ by Muhammad Ahmed | Chess Game Pro v1.0</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils/constants.js"></script>
+    <script src="js/models/Piece.js"></script>
+    <script src="js/models/Pawn.js"></script>
+    <script src="js/models/Rook.js"></script>
+    <script src="js/models/Knight.js"></script>
+    <script src="js/models/Bishop.js"></script>
+    <script src="js/models/Queen.js"></script>
+    <script src="js/models/King.js"></script>
+    <script src="js/utils/Stack.js"></script>
+    <script src="js/utils/LinkedList.js"></script>
+    <script src="js/managers/BoardManager.js"></script>
+    <script src="js/managers/RulesManager.js"></script>
+    <script src="js/managers/GameController.js"></script>
+    <script src="js/ai/MinimaxAI.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
